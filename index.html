@@ -104,10 +104,39 @@
             <div class="col-md-5 offset-md-1">
               <div class="row mt-2">
                 <div class="col-sm-4">
-                  <div class="pb-1">Age</div>
+                  <div class="pb-1">
+                    Age</div>
                 </div>
                 <div class="col-sm-8">
-                  <div class="pb-1 text-secondary">30</div>
+                  <div class="pb-1 text-secondary" id="age">
+                    
+                    <script>
+                      // Set your birthday here
+                      var birthday = new Date("January 18, 1994");
+                
+                      function calculateAge() {
+                        var today = new Date();
+                        var ageInYears = today.getFullYear() - birthday.getFullYear();
+                        var ageInMonths = today.getMonth() - birthday.getMonth();
+                        if (today.getDate() < birthday.getDate()) {
+                            ageInMonths--;
+                        }
+                        if (ageInMonths < 0) {
+                            ageInMonths += 12;
+                            ageInYears--;
+                        }
+                        if (ageInMonths === 0) {
+                          document.getElementById("age").innerHTML = "I am " + ageInYears + " Years old.";
+                        } else {
+                          document.getElementById("age").innerHTML = "I am " + ageInYears + " Years and " + ageInMonths + " months old.";
+                        }
+                      }
+                
+                      // Call the calculateAge function on page load
+                      calculateAge();
+                    </script>
+                    
+                    </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="pb-1">Email</div>
@@ -370,7 +399,7 @@
             </div>
              
             <div style="text-align:center;">
-              <h2 style="color:green;">I have completed numerous certifications, use link below.</h2>
+              <h2 style="color:green;">Completed Many Certifications below is the Link</h2>
               <a href="https://drive.google.com/drive/folders/0B4oOiLRjWNxDTUZrcDExeHQ1UzQ?resourcekey=0-X-3QFN-9ptiYZ6xIr7jfrg" target="_blank" style="font-size:20px; text-decoration:none; color:blue;">Click Here</a>
             </div>
 
