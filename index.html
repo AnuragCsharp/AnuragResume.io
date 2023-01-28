@@ -31,6 +31,49 @@
 </head>
 
 <body id="top">
+
+  <script>
+    // Get the current hour
+    var currentHour = new Date().getHours();
+  
+    // Define the greeting based on the current hour
+    var greeting;
+    if (currentHour < 12) {
+      greeting = "Good Morning";
+    } else if (currentHour < 18) {
+      greeting = "Good Afternoon";
+    } else {
+      greeting = "Good Evening";
+    }
+  
+    // Create the dialog box
+    var dialog = document.createElement("div");
+    dialog.style.backgroundColor = "rgba(0, 153, 255, 0.8)";
+    dialog.style.border = "1px solid black";
+    dialog.style.padding = "10px";
+    dialog.style.position = "fixed";
+    dialog.style.top = "1%";
+    dialog.style.left = "25%";
+    dialog.style.transform = "translate(50%, 0)";
+    dialog.style.textAlign = "center";
+    dialog.style.width = "25%";
+    dialog.style.height = "5%";
+    dialog.style.zIndex = "9999";
+    
+    // Add the greeting and message to the dialog box
+    dialog.innerHTML = "<center><p style='font-size:1em;font-weight:bold; color:white'>" + greeting + "</p>";
+  
+    // Add the dialog box to the body of the HTML
+    document.body.appendChild(dialog);
+  
+    // Function to make the dialog box disappear after 3 seconds
+    setTimeout(function() {
+      dialog.style.transition = "opacity 3s";
+      dialog.style.opacity = "0";
+    }, 3000);
+  </script>
+  
+  
   <header class="d-print-none">
     <div class="container text-center text-lg-left">
       <div class="py-3 clearfix">
@@ -98,8 +141,7 @@
                 I am eager to join a team where I can continue to develop my skills and collaborate to create the next
                 generation of games and XR applications,
                 pushing the boundaries of multimedia and 3D. On a personal level, I am a self-starter with a pragmatic
-                approach and a strong sense of product ownership .
-                .</p>
+                approach and a strong sense of product ownership.</p>
             </div>
             <div class="col-md-5 offset-md-1">
               <div class="row mt-2">
