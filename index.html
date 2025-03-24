@@ -26,6 +26,43 @@
         opacity: 1 !important;
         transform: translate(0) scale(1) !important;
       }
+  <!-- Original CSS (kept as is) -->
+  <link rel="stylesheet" href="style.css">
+  
+<!-- Flutter animation styles -->
+  <style>
+    .flutter-highlight {
+      background-color: #f8f9fa;
+      border-left: 6px solid #42a5f5;
+      padding: 20px;
+      margin: 30px 0;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .flutter-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 10px;
+    }
+
+    .flutter-body {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
     </style>
   </noscript>
 </head>
@@ -35,6 +72,9 @@
   <script>
     // Get the current hour
     var currentHour = new Date().getHours();
+		
+	//Temp Comment IGNORE
+				
   
     // Define the greeting based on the current hour
     var greeting;
@@ -390,6 +430,9 @@
               </div>
 
             </div>
+
+
+
 
 
             <hr class="d-print-none" />
