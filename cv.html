@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Anurag Sen — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BRUTALIST CV (print / PDF) — Anurag Sen ===== */
+    :root {
+      --ink: #111111;
+      --paper: #f3f0e7;
+      --yellow: #ffd400;
+      --pink: #ff4f87;
+      --blue: #2f5cff;
+      --green: #00c474;
+      --orange: #ff6a1f;
+      --border: 2.5px solid var(--ink);
+      --border-fat: 4px solid var(--ink);
+      --shadow-sm: 4px 4px 0 var(--ink);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    @page { size: A4; margin: 12mm; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Space Mono", "Courier New", monospace;
+      line-height: 1.45;
+      font-size: 11px;
+    }
+    h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; text-transform: uppercase; font-weight: 700; letter-spacing: -.5px; }
+
+    .block { border: var(--border-fat); background: #fff; box-shadow: var(--shadow-sm); padding: 16px 18px; margin-bottom: 16px; page-break-inside: avoid; }
+
+    .sec-title { display: inline-block; background: var(--ink); color: #fff; font-size: 17px; padding: 5px 12px; margin-bottom: 12px; }
+
+    /* hero */
+    header.block { background: var(--yellow); }
+    .hero { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; }
+    .avatar { border: var(--border-fat); background: #fff; padding: 4px; width: 100%; }
+    .avatar img { display: block; width: 100%; height: auto; filter: grayscale(100%) contrast(1.1); }
+    .name { font-size: 46px; line-height: .9; letter-spacing: -2px; }
+    .role { margin-top: 8px; font-weight: 700; font-size: 12px; border-top: var(--border); padding-top: 8px; text-transform: uppercase; }
+    .contacts { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .contacts span { background: var(--ink); color: var(--yellow); padding: 3px 8px; font-size: 10px; font-weight: 700; }
+
+    /* xp + facts */
+    .xp { border: var(--border-fat); background: var(--pink); color: #fff; padding: 10px; text-align: center; margin-bottom: 16px; page-break-inside: avoid; }
+    .xp .label { text-transform: uppercase; font-weight: 700; font-size: 11px; }
+    .xp .big { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 24px; margin-top: 4px; }
+    .xp .big b { background: var(--ink); padding: 1px 8px; }
+
+    .two { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; }
+    .facts { border: var(--border); }
+    .fact { display: grid; grid-template-columns: 70px 1fr; border-bottom: var(--border); }
+    .fact:last-child { border-bottom: none; }
+    .fact .k { background: var(--ink); color: #fff; padding: 6px 8px; font-weight: 700; text-transform: uppercase; font-size: 9px; }
+    .fact .v { padding: 6px 8px; font-size: 10px; word-break: break-word; }
+    p { font-size: 11px; }
+
+    /* skills */
+    .skill { margin-bottom: 9px; }
+    .skill-head { display: flex; justify-content: space-between; font-weight: 700; text-transform: uppercase; font-size: 10px; margin-bottom: 3px; }
+    .bar { border: var(--border); height: 16px; background: #fff; }
+    .bar > i { display: block; height: 100%; background: var(--blue); }
+    .skill:nth-child(odd) .bar > i { background: var(--pink); }
+    .skill:nth-child(3n) .bar > i { background: var(--green); }
+
+    /* timeline */
+    .tl-card { border: var(--border); background: #fff; margin-bottom: 12px; page-break-inside: avoid; }
+    .tl-card.job { border-left: 8px solid var(--blue); }
+    .tl-card.edu { border-left: 8px solid var(--green); }
+    .tl-card.win { border-left: 8px solid var(--orange); }
+    .tl-card.founder { border-left: 8px solid var(--pink); }
+    .tl-head { padding: 9px 12px; border-bottom: var(--border); }
+    .tl-head .ttl { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; }
+    .tl-head .org { font-weight: 700; color: #444; font-size: 11px; }
+    .tl-head .date { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; background: var(--ink); color: var(--yellow); padding: 2px 6px; margin-top: 3px; }
+    .tl-body { padding: 10px 12px; font-size: 10.5px; }
+    .tl-body ul { margin-left: 16px; }
+    .tl-body li { margin-bottom: 3px; }
+
+    /* projects */
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .proj { border: var(--border); background: #fff; page-break-inside: avoid; }
+    .proj-top { padding: 5px 10px; border-bottom: var(--border); font-weight: 700; text-transform: uppercase; font-size: 9px; }
+    .proj.p1 .proj-top { background: var(--pink); color: #fff; }
+    .proj.p2 .proj-top { background: var(--blue); color: #fff; }
+    .proj.p3 .proj-top { background: var(--orange); color: #fff; }
+    .proj.p4 .proj-top { background: var(--green); color: #fff; }
+    .proj-body { padding: 10px; }
+    .proj-body h3 { font-size: 16px; letter-spacing: -1px; }
+    .proj-body .url { font-size: 9px; font-weight: 700; color: #555; margin: 2px 0 6px; }
+    .proj-body p { font-size: 10px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .proj-tags span { border: 2px solid var(--ink); padding: 1px 5px; font-size: 8px; font-weight: 700; text-transform: uppercase; background: var(--yellow); }
+
+    .foot { text-align: center; border: var(--border-fat); background: var(--ink); color: var(--yellow); padding: 12px; font-size: 10px; text-transform: uppercase; font-weight: 700; }
+    .badge-now { background: var(--green); color: #fff; padding: 1px 6px; font-size: 9px; font-weight: 700; text-transform: uppercase; margin-left: 4px; }
+  </style>
+</head>
+<body>
+
+  <header class="block">
+    <div class="hero">
+      <div class="avatar"><img src="images/Profile.jpg" alt="Anurag Sen"></div>
+      <div>
+        <h1 class="name">ANURAG SEN</h1>
+        <p class="role">Workstream Lead @ NOV · Founder · Game Dev · AR / VR / MR · Digital Twin</p>
+        <div class="contacts">
+          <span>✉ Anuragsen@hotmail.com</span>
+          <span>☎ +91-883917-8137</span>
+          <span>in/anurag-sen</span>
+          <span>github.com/AnuragCsharp</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="xp">
+    <div class="label">⏱ Total Work Experience — since 11 Aug 2014</div>
+    <div class="big"><b>11</b> YEARS <b>10</b> MONTHS+</div>
+  </div>
+
+  <section class="block">
+    <h2 class="sec-title">// About Me</h2>
+    <div class="two">
+      <p>As a highly skilled and experienced programmer, I am excited to bring my passion for computer graphics, 3D and interactive development to new opportunities. With a focus on methodology and structure, I am proficient in C# and adapt to other languages as needed. Beyond game development, I push the limits of 3D for interactive visualization, simulation, and robust AR, VR, and MR applications. I am a self-starter with a pragmatic approach and a strong sense of product ownership.</p>
+      <div class="facts">
+        <div class="fact"><div class="k">Age</div><div class="v">32 years</div></div>
+        <div class="fact"><div class="k">Email</div><div class="v">Anuragsen@hotmail.com</div></div>
+        <div class="fact"><div class="k">Phone</div><div class="v">+91-883917-8137</div></div>
+        <div class="fact"><div class="k">Address</div><div class="v">MQ 1133 Shobhapur Colony, Post Pathakhera, District Betul, Madhya Pradesh 500032 — INDIA</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec-title">// Professional Skills</h2>
+    <div class="two">
+      <div>
+        <div class="skill"><div class="skill-head"><span>C# Programming</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Azure Certified (Az-900, Az-104)</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Unity 3D — Shaders &amp; A.I</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      </div>
+      <div>
+        <div class="skill"><div class="skill-head"><span>Professional Trainer</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Project Management</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Full Stack Developer</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec-title">// Work Experience</h2>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">Workstream Lead — Software Engineering</span> <span class="org">— National Oilwell Varco (NOV)</span><span class="badge-now">Current</span><br><span class="date">Jul 2023 – Present</span></div>
+      <div class="tl-body">
+        <p>Lead the engineering workstream for the <b>Corporate Application Services (CAS)</b> domain — owning the design, development, and full lifecycle of in-house enterprise applications, including internal mobile apps used across the organization.</p>
+        <ul>
+          <li>Own and govern a portfolio of <b>70+ application repositories</b>, driving code standards, branching strategy, and release hygiene across teams.</li>
+          <li>Architected and deployed an in-house <b>Secret Manager</b> that securely stores, rotates, and serves company secrets and credentials across services.</li>
+          <li>Designed and built automated <b>cron jobs</b> for scheduled data syncs, maintenance, and operational workflows — cutting manual effort and improving reliability.</li>
+          <li>Drive design and delivery of internal mobile and web applications from concept to production.</li>
+          <li>Provide technical leadership, mentorship, and delivery ownership across the CAS workstream.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card founder">
+      <div class="tl-head"><span class="ttl">Founder &amp; Lead Developer (Freelance)</span> <span class="org">— MotoSure.in &amp; HatoHelp.in · with Metavisionrs IT Solution Pvt. Ltd.</span><span class="badge-now">Current</span><br><span class="date">Feb 2025 – Present</span></div>
+      <div class="tl-body">
+        <p>A parallel passion project — building products for people in my free time, pro-bono, in collaboration with Metavisionrs IT Solution Pvt. Ltd. Founder and lead developer of two consumer mobile applications, owning the full product lifecycle.</p>
+        <ul>
+          <li><b>MotoSure (motosure.in)</b> — a 24/7 roadside assistance platform for India offering on-demand car &amp; bike breakdown support.</li>
+          <li><b>HatoHelp (hatohelp.in)</b> — "Help All, Trust One" — a community-driven, trust-based mobile platform connecting people who need help with those ready to provide it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">Technical Lead</span> <span class="org">— Wipro Technologies</span><br><span class="date">Oct 2021 – Jun 2023</span></div>
+      <div class="tl-body">
+        <p>Working on Digital Twin platform creation using Unity 3D, Azure Services and team management.</p>
+        <ul>
+          <li>Developed and implemented Azure architecture for solutions as per client specifications.</li>
+          <li>Collaborated with architects and stakeholders to develop DTDL solutions for the Energy &amp; Utilities client.</li>
+          <li>Designed CI/CD setup for Unity and web application automation on Azure DevOps Pipelines.</li>
+          <li>Acquired in-depth expertise in Azure Cloud, utilizing over 10 services.</li>
+          <li>Participated in the digitalization of P&amp;ID to Digital Twin transformation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">SDE II</span> <span class="org">— Jio Tesseract (Reliance Group)</span><br><span class="date">Aug 2021 – Sep 2021</span></div>
+      <div class="tl-body">
+        <ul>
+          <li>Creation of various backend pipelines in Unity 3D for the MR-Glasses.</li>
+          <li>Unity 3D SDK developer-relations engineer for smart glasses in-house development product.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">Technical Lead (Consultant)</span> <span class="org">— Outreal XR (Dubai)</span><br><span class="date">May 2021 – Oct 2021</span></div>
+      <div class="tl-body">
+        <ul>
+          <li>Implemented a secure remote infrastructure on AWS Workspace for secure access and data management.</li>
+          <li>Adhered to agile methodologies — daily scrums and progress tracking via Trello.</li>
+          <li>Leveraged SME in Unity Game Engine to optimize performance and functionality.</li>
+          <li>Provided technical leadership and managed budget, resources, assets, and vendors.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">Senior Faculty — Gaming</span> <span class="org">— iNurture Education</span><br><span class="date">2019 – 2021</span></div>
+      <div class="tl-body">
+        <ul>
+          <li>Deputed as a professor at D.Y. Patil University, Pune.</li>
+          <li>Responsible for education and development of undergraduate students in gaming.</li>
+          <li>Mentored students, managed project progress, and coordinated with the placement office.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-card job">
+      <div class="tl-head"><span class="ttl">Senior Software Engineer</span> <span class="org">— Wipro Technologies</span><br><span class="date">2014 – 2019</span></div>
+      <div class="tl-body">
+        <ul>
+          <li><b>Deputation at Saudi Aramco — Senior Simulation Engineer:</b> Digital Elevation Maps via GDAL; large-scale Saudi Arabia terrain at 30 m/pixel; Unity HLSL shaders for height-based coloring.</li>
+          <li><b>Collaborative framework for Oil &amp; Gas major:</b> Azure Cognitive Search with ML custom skillsets; IBM Watson voice control; 3D live visualization tools; BP vessel inspection &amp; voyage-tracking app.</li>
+          <li><b>Other Wipro teams:</b> Unity plugin app for EPSON Moverio BT-300; casino slot-game testing.</li>
+          <li><b>AR &amp; VR applications:</b> automobile marketing app; aircraft training-simulator POCs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec-title">// Works &amp; Fun Projects</h2>
+    <div class="projects">
+      <div class="proj p1"><div class="proj-top">★ Startup · motosure.in</div><div class="proj-body"><h3>MotoSure</h3><div class="url">motosure.in</div><p>24/7 roadside assistance platform for India — on-demand car &amp; bike breakdown support connecting stranded motorists with quick emergency help.</p><div class="proj-tags"><span>Mobile App</span><span>24/7</span><span>India</span></div></div></div>
+      <div class="proj p2"><div class="proj-top">★ Community · hatohelp.in</div><div class="proj-body"><h3>HatoHelp</h3><div class="url">hatohelp.in</div><p>"Help All, Trust One." A community-driven, trust-based mobile platform connecting those who need help with those ready to provide it.</p><div class="proj-tags"><span>Mobile App</span><span>Community</span><span>Trust</span></div></div></div>
+      <div class="proj p3"><div class="proj-top">★ Fun / Metaverse · meetndance.com</div><div class="proj-body"><h3>MeetnDance</h3><div class="url">meetndance.com</div><p>An online low-poly rave — a gamified 3D metaverse where people join a neon dance floor, customize avatars, dance &amp; emote, and vibe to music in real time with voice &amp; text chat.</p><div class="proj-tags"><span>WebGL / 3D</span><span>Multiplayer</span><span>Low-Poly</span></div></div></div>
+      <div class="proj p4"><div class="proj-top">★ Cafe / Web · hatoeat.in</div><div class="proj-body"><h3>HatoEat — Cafe Hato</h3><div class="url">hatoeat.in · menu.hatoeat.in</div><p>"Healthy And Tasty Orders." Designed and built the entire website end-to-end, including the digital menu and its full visual design.</p><div class="proj-tags"><span>Web Design</span><span>Menu Design</span><span>Branding</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec-title">// Education</h2>
+    <div class="tl-card edu">
+      <div class="tl-head"><span class="ttl">Masters in Software Engineering</span> <span class="org">— BITS Pilani University</span><br><span class="date">2015 – 2018</span></div>
+      <div class="tl-body"><p>Masters via the Work Integrated Learning Program (WILP), sponsored by Wipro — integrating work as a software engineer with study, completing with a cumulative GPA of 7.0.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec-title">// Achievements</h2>
+    <div class="tl-card win"><div class="tl-head"><span class="ttl">League Exemplar Award</span> <span class="org">— Wipro (Industrial Engineering Services)</span><br><span class="date">2018</span></div></div>
+    <div class="tl-card win"><div class="tl-head"><span class="ttl">1st Place — AR Game Dev Hackathon</span> <span class="org">— India</span><br><span class="date">2018</span></div></div>
+    <div class="tl-card win"><div class="tl-head"><span class="ttl">League Extraordinary Award</span> <span class="org">— Wipro (Platform &amp; Engineering Services)</span><br><span class="date">2017</span></div></div>
+  </section>
+
+  <div class="foot">© <span id="y"></span> Anurag Sen — Built Raw, Built Brutal · anuragsen@hotmail.com</div>
+  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
