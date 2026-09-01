@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Anurag Sen — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ 2-PAGE MINIMAL RESUME — Anurag Sen ============ */
+  :root {
+    --ink: #10142E; --ink-60: rgba(16,20,46,.66); --ink-40: rgba(16,20,46,.45);
+    --ultra: #3B45E0; --saffron: #E96F1F; --teal: #0E9F6E; --line: #DFE3F0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { background: #fff; }
+  body { font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); font-size: 9.2pt; line-height: 1.36; }
+  .sheet { width: 210mm; height: 296mm; padding: 9mm 13mm 8mm; page-break-after: always; overflow: hidden; }
+  .sheet:last-child { page-break-after: auto; }
+  a { color: var(--ink); text-decoration: none; }
+  .mono { font-family: "IBM Plex Mono", monospace; }
+
+  /* header */
+  .head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5px solid var(--ink); padding-bottom: 3mm; margin-bottom: 3.6mm; }
+  .head h1 { font-size: 24pt; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+  .head h1 span { color: var(--ultra); }
+  .head .tag { font-size: 10pt; color: var(--ink-60); margin-top: 2mm; }
+  .head .tag b { color: var(--ink); }
+  .contact { text-align: right; font-family: "IBM Plex Mono", monospace; font-size: 7.4pt; color: var(--ink-60); line-height: 1.7; }
+  .contact a { color: var(--ultra); }
+
+  /* section headers */
+  h2 {
+    font-family: "IBM Plex Mono", monospace; font-size: 7.6pt; font-weight: 600;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--ultra);
+    display: flex; align-items: center; gap: 3mm; margin: 3.8mm 0 2mm;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .sheet > h2:first-of-type { margin-top: 0; }
+
+  /* generic */
+  p, li { color: var(--ink-60); }
+  b { color: var(--ink); font-weight: 700; }
+  ul { margin-left: 4.2mm; }
+  li { margin-bottom: .6mm; }
+
+  /* AI highlights */
+  .rule { font-size: 9.2pt; margin-bottom: 2mm; }
+  .ai-item { margin-bottom: 1.9mm; }
+  .ai-item .t { font-weight: 900; font-size: 9.6pt; }
+  .ai-item .t .st { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; font-weight: 600; letter-spacing: .12em; color: var(--teal); border: 1px solid var(--teal); border-radius: 2px; padding: .4mm 1.6mm; vertical-align: 1pt; margin-left: 2mm; }
+  .ai-item p { margin-top: .6mm; }
+
+  /* two-col utility */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+
+  /* skills */
+  .skill-row { display: grid; grid-template-columns: 22mm 1fr; gap: 3mm; margin-bottom: 1.2mm; align-items: baseline; }
+  .skill-row .k { font-family: "IBM Plex Mono", monospace; font-size: 7pt; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .skill-row.s1 .k { color: var(--ultra); } .skill-row.s2 .k { color: var(--saffron); } .skill-row.s3 .k { color: var(--teal); }
+  .skill-row .v { font-size: 9pt; color: var(--ink-60); }
+
+  /* jobs */
+  .job { margin-bottom: 2.6mm; }
+  .job .row1 { display: flex; justify-content: space-between; align-items: baseline; }
+  .job h3 { font-size: 10pt; font-weight: 900; }
+  .job .org { color: var(--ultra); font-weight: 700; font-size: 9.4pt; }
+  .job .when { font-family: "IBM Plex Mono", monospace; font-size: 7.2pt; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-40); white-space: nowrap; }
+  .job .when .now { color: var(--teal); font-weight: 600; }
+  .job ul { margin-top: .8mm; }
+
+  /* compact cards */
+  .mini { border: 1px solid var(--line); border-radius: 2.5mm; padding: 2.4mm 3mm; }
+  .mini h3 { font-size: 9.6pt; font-weight: 900; }
+  .mini .u { font-family: "IBM Plex Mono", monospace; font-size: 7pt; color: var(--ink-40); margin-bottom: 1mm; }
+  .mini p { font-size: 8.8pt; }
+
+  .foot { margin-top: 4mm; border-top: 1px solid var(--line); padding-top: 2.4mm; display: flex; justify-content: space-between; font-family: "IBM Plex Mono", monospace; font-size: 7pt; color: var(--ink-40); }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="sheet">
+
+  <div class="head">
+    <div>
+      <h1>Anurag Sen<span>.</span></h1>
+      <p class="tag">Engineer who ships with an <b>AI fleet</b> — Workstream Lead @ NOV · Founder, HatoHelp &amp; MotoSure</p>
+    </div>
+    <div class="contact">
+      <a href="mailto:anuragsen@hotmail.com">anuragsen@hotmail.com</a><br>
+      +91-88391-78137 · Madhya Pradesh, IN<br>
+      <a href="https://github.com/AnuragCsharp">github.com/AnuragCsharp</a> · <a href="https://www.linkedin.com/in/anurag-sen/">in/anurag-sen</a><br>
+      <a href="https://anuragcsharp.github.io/AnuragResume.io/">full interactive resume ↗</a>
+    </div>
+  </div>
+
+  <h2>AI, with receipts</h2>
+  <p class="rule">Systems I designed, built, and run in production. My rule everywhere: <b>AI proposes, I approve — nothing merges without me.</b></p>
+
+  <div class="ai-item">
+    <p class="t">Replaced bug-hunting with an AI agent <span class="st">RUNNING DAILY</span></p>
+    <p>It watches our Slack bug channel: acknowledges a report in ~1 second, digs through the codebase, writes the root-cause analysis, drafts the fix on a branch, and files everything on a <b>GitHub Projects tracker</b>. Hunt → analyse → fix → keep books; merging stays human.</p>
+  </div>
+
+  <div class="ai-item">
+    <p class="t">Genie — a voice concierge inside the product <span class="st">IN PRODUCT</span></p>
+    <p>Speak to the app in Hindi or English; it books rides, orders food, finds help. I built the full voice loop (ASR → LLM → neural TTS) on AWS, provider-swappable, guarded by a <b>typed capability registry</b> — money-moving actions always return to the human.</p>
+  </div>
+
+  <div class="ai-item">
+    <p class="t">A storefront that redecorates itself — zero app releases <span class="st">LIVE</span></p>
+    <p>Festivals are a <b>content change, not a release</b>: theme, banners, prices, and animations stream from a server manifest + remote layouts. Swapped 4 festival takeovers live in one evening; guaranteed fallback to stock UI — it cannot crash by design.</p>
+  </div>
+
+  <div class="ai-item">
+    <p class="t">I run AI agents like a team — with code reviews <span class="st">FLEET</span></p>
+    <p>Features decompose into tasks; fresh implementer agents build, reviewer agents critique every diff, disagreements escalate to me with evidence. One storefront feature: <b>11 commits, 53 new tests, reviewed &amp; merged in a day</b> — a team's output from a team of one.</p>
+  </div>
+
+  <div class="ai-item">
+    <p class="t">The boring parts run themselves <span class="st">AUTOMATED</span></p>
+    <p>Appium test-drives walk the apps like a user; releases flow GitHub Actions → registry → cloud by digest; push campaigns compose, send, and verify programmatically; always-on watchers wake my agents at 3 AM so I don't have to.</p>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="skill-row s1"><span class="k">Signature</span><span class="v">AI agent orchestration · LLM apps (Claude, Bedrock) · Voice AI pipelines (ASR·LLM·TTS) · Server-driven UI · Prompt &amp; tool design · C#/.NET · Unity 3D &amp; Digital Twin</span></div>
+  <div class="skill-row s2"><span class="k">Fluent</span><span class="v">Flutter · Azure (AZ-900, AZ-104) · AWS (EC2, RDS, Polly, Transcribe) · NestJS/Node · CI/CD (GitHub Actions, Azure DevOps) · AR/VR/MR · SQL &amp; Prisma</span></div>
+  <div class="skill-row s3"><span class="k">Human</span><span class="v">Engineering leadership · Product ownership · Mentoring (ex-professor) · Architecture reviews · Budget &amp; vendor management</span></div>
+
+  <h2>Experience — current</h2>
+
+  <div class="job">
+    <div class="row1"><h3>Workstream Lead, Software Engineering — <span class="org">National Oilwell Varco (NOV)</span></h3><span class="when">Jul 2023 — <span class="now">Present</span></span></div>
+    <ul>
+      <li>Lead the Corporate Application Services engineering workstream: the company's in-house enterprise &amp; mobile apps, end to end.</li>
+      <li>Own and govern <b>70+ application repositories</b> — code standards, branching strategy, release hygiene across teams.</li>
+      <li>Architected an in-house <b>Secret Manager</b> (store, rotate, serve credentials) and a suite of automated operational jobs.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row1"><h3>Founder &amp; Lead Developer — <span class="org">HatoHelp.in &amp; MotoSure.in · with Metavisionrs IT Solution</span></h3><span class="when">Feb 2025 — <span class="now">Present</span></span></div>
+    <ul>
+      <li>Two consumer platforms, solo-architected from concept to app stores, pro-bono. This is where the AI fleet above lives — in production, for real users.</li>
+      <li><b>HatoHelp</b> — "Help All, Trust One": rides, food, grocery, parcels &amp; community help with Genie inside. <b>MotoSure</b> — 24/7 roadside assistance across India.</li>
+      <li>Full stack with agents: Flutter apps, NestJS backend, AWS infra, CI/CD, observability, releases.</li>
+    </ul>
+  </div>
+
+  <div class="foot"><span>Anurag Sen — page 1 of 2</span><span>the interactive version live-replays these systems: anuragcsharp.github.io/AnuragResume.io</span></div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="sheet">
+
+  <h2>Experience — earlier</h2>
+
+  <div class="job">
+    <div class="row1"><h3>Technical Lead — <span class="org">Wipro Technologies</span></h3><span class="when">Oct 2021 — Jun 2023</span></div>
+    <ul>
+      <li>Digital Twin platform creation with Unity 3D + Azure for an Energy &amp; Utilities client; designed Azure architectures and DTDL solutions with client architects.</li>
+      <li>Built the CI/CD story for Unity + web on Azure DevOps Pipelines incl. automated test plans; hands-on with 10+ Azure services; drove P&amp;ID → Digital Twin transformation.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row1"><h3>Technical Lead (Consultant) · SDE II — <span class="org">Outreal XR, Dubai · Jio Tesseract (Reliance)</span></h3><span class="when">May — Oct 2021</span></div>
+    <ul>
+      <li>Outreal XR: secure AWS Workspace infrastructure, Unity performance leadership, budget &amp; vendor management.</li>
+      <li>Jio Tesseract: Unity 3D backend pipelines and SDK developer-relations for in-house MR glasses.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="row1"><h3>Senior Faculty, Gaming — <span class="org">iNurture · deputed professor, D.Y. Patil University, Pune</span></h3><span class="when">2019 — 2021</span></div>
+    <ul><li>Taught and mentored undergraduates in game development — projects, placements, and the craft. Teaching engineers made me a better one.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="row1"><h3>Senior Software Engineer — <span class="org">Wipro Technologies</span></h3><span class="when">Aug 2014 — 2019</span></div>
+    <ul>
+      <li><b>Saudi Aramco deputation:</b> digital elevation maps with GDAL; 30 m/pixel height-map terrain of Saudi Arabia; Unity HLSL shaders.</li>
+      <li><b>Oil &amp; Gas major (4 yrs):</b> Azure Cognitive Search with custom ML skillsets; IBM Watson voice control; 3D live visualization for oil exploration; vessel inspection &amp; voyage tracking for BP.</li>
+      <li><b>AR/VR (2 yrs):</b> automobile marketing app; training-simulator POCs for an aircraft manufacturer; EPSON Moverio BT-300 plugin work.</li>
+    </ul>
+  </div>
+
+  <h2>Products</h2>
+  <div class="cols">
+    <div class="mini"><h3>HatoHelp</h3><p class="u">hatohelp.in</p><p>"Help All, Trust One." Rides, food, grocery, parcels &amp; community help in one trust-based app — with the Genie voice concierge and a self-updating festival storefront.</p></div>
+    <div class="mini"><h3>MotoSure</h3><p class="u">motosure.in</p><p>24/7 roadside assistance for India — on-demand car &amp; bike breakdown support connecting stranded motorists with quick help anywhere.</p></div>
+    <div class="mini"><h3>MeetnDance</h3><p class="u">meetndance.com</p><p>A low-poly online rave: 3D multiplayer dance floor with avatars, emotes, music, and voice chat. A tiny indie metaverse built with love.</p></div>
+    <div class="mini"><h3>HatoEat — Cafe Hato</h3><p class="u">hatoeat.in · menu.hatoeat.in</p><p>"Healthy And Tasty Orders." Cafe brand — I designed and built the full web presence, digital menu included.</p></div>
+  </div>
+
+  <h2>Education · Awards · Certifications</h2>
+  <div class="cols">
+    <div>
+      <div class="job">
+        <div class="row1"><h3>M.Tech, Software Engineering — <span class="org">BITS Pilani</span></h3><span class="when">2015 — 2018</span></div>
+        <ul><li>Work-Integrated Learning Program, sponsored by Wipro — engineering by day, engineering theory by night.</li></ul>
+      </div>
+      <div class="job">
+        <div class="row1"><h3>Certifications</h3></div>
+        <ul><li>Microsoft Azure: <b>AZ-900</b>, <b>AZ-104</b> — plus a folder full of the rest (linked on the website).</li></ul>
+      </div>
+    </div>
+    <div>
+      <div class="job">
+        <div class="row1"><h3>Awards</h3></div>
+        <ul>
+          <li><b>1st place</b> — AR Game Development Hackathon, India (2018)</li>
+          <li>League Exemplar — Wipro Industrial Engineering Services (2018)</li>
+          <li>League Extraordinary — Wipro Platform &amp; Engineering Services (2017)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>The short version</h2>
+  <p class="rule">Eleven years from Unity shaders to digital twins to cloud — and now I multiply that experience with AI agents that hunt bugs, talk to users, and ship features while I sleep. I bring the judgment; the fleet brings the hours. <b>Together we out-ship the stampede.</b></p>
+
+  <div class="foot"><span>Anurag Sen — page 2 of 2</span><span>anuragsen@hotmail.com · +91-88391-78137</span></div>
+</div>
+
+</body>
+</html>
