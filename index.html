@@ -628,9 +628,9 @@
         </form>
         <div class="card-facts">
           <div class="row"><span class="k">Email</span><span><a href="mailto:anuragsen@hotmail.com">anuragsen@hotmail.com</a></span></div>
-          <div class="row"><span class="k">Phone</span><span>+91-88391-78137</span></div>
-          <div class="row"><span class="k">Age</span><span id="age">…</span></div>
-          <div class="row"><span class="k">Address</span><span>MQ 1133 Shobhapur Colony, Post Pathakhera, District Betul, Madhya Pradesh 500032 — India</span></div>
+          <div class="row"><span class="k">GitHub</span><span><a href="https://github.com/AnuragCsharp" target="_blank" rel="noopener">github.com/AnuragCsharp</a></span></div>
+          <div class="row"><span class="k">LinkedIn</span><span><a href="https://www.linkedin.com/in/anurag-sen/" target="_blank" rel="noopener">linkedin.com/in/anurag-sen</a></span></div>
+          <div class="row"><span class="k">Base</span><span>Madhya Pradesh, India</span></div>
         </div>
       </div>
     </section>
@@ -654,16 +654,6 @@
       if (el) el.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     }
     tick(); setInterval(tick, 30000);
-  })();
-
-  /* ---------- live age ---------- */
-  (function () {
-    var b = new Date("January 18, 1994"), t = new Date();
-    var y = t.getFullYear() - b.getFullYear();
-    var m = t.getMonth() - b.getMonth();
-    if (t.getDate() < b.getDate()) m--;
-    if (m < 0) { m += 12; y--; }
-    document.getElementById("age").textContent = m === 0 ? (y + " years") : (y + " years, " + m + " months");
   })();
 
   /* ---------- live experience counter (since 11 Aug 2014) ---------- */
