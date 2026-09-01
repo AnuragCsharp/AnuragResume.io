@@ -3,593 +3,662 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ANURAG SEN // RESUME</title>
+  <title>Anurag Sen — Engineer who ships with AI</title>
+  <meta name="description" content="Anurag Sen. Workstream Lead at NOV, founder of HatoHelp & MotoSure. I build products with a fleet of AI agents — voice concierges, bug-fixing bots, and platforms that update themselves.">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* =====================================================
-       BRUTALIST RESUME — Anurag Sen
-       Raw blocks · thick borders · hard shadows · no curves
+       ANURAG SEN — HUMAN, AMPLIFIED
+       An operations ledger of one engineer + his AI fleet.
+       paper/ink/ultramarine/saffron · Unbounded/Schibsted/Plex Mono
        ===================================================== */
     :root {
-      --ink: #111111;
-      --paper: #f3f0e7;
-      --yellow: #ffd400;
-      --pink: #ff4f87;
-      --blue: #2f5cff;
-      --green: #00c474;
-      --orange: #ff6a1f;
-      --shadow: 7px 7px 0 var(--ink);
-      --shadow-sm: 4px 4px 0 var(--ink);
-      --border: 3px solid var(--ink);
-      --border-fat: 5px solid var(--ink);
+      --paper: #F7F8FC;
+      --ink: #10142E;
+      --ink-60: rgba(16, 20, 46, .64);
+      --ink-40: rgba(16, 20, 46, .42);
+      --ultra: #3B45E0;
+      --saffron: #FF8A3C;
+      --teal: #0E9F6E;
+      --console: #0B0E22;
+      --console-ink: #C9D1F5;
+      --line: #DFE3F0;
+      --card: #FFFFFF;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(16, 20, 46, .07);
+      --display: "Unbounded", sans-serif;
+      --body: "Schibsted Grotesk", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--paper);
       color: var(--ink);
-      font-family: "Space Mono", "Courier New", monospace;
-      line-height: 1.5;
-      padding: 22px;
-      background-image:
-        linear-gradient(rgba(17,17,17,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17,17,17,.05) 1px, transparent 1px);
-      background-size: 24px 24px;
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.62;
     }
+    ::selection { background: var(--saffron); color: var(--ink); }
+    a { color: var(--ultra); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--saffron); outline-offset: 2px; }
 
-    .wrap { max-width: 1080px; margin: 0 auto; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 64px 1fr; gap: 40px; }
 
-    h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; text-transform: uppercase; font-weight: 700; letter-spacing: -.5px; }
-
-    a { color: var(--ink); }
-
-    /* ---------- generic block ---------- */
-    .block {
-      border: var(--border-fat);
-      background: #fff;
-      box-shadow: var(--shadow);
-      padding: 26px;
-      margin-bottom: 26px;
+    /* ---------- left spine ---------- */
+    .spine {
+      position: sticky; top: 0; height: 100vh;
+      display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+      padding: 28px 0; border-right: 1px solid var(--line);
     }
-
-    .sec-title {
-      display: inline-block;
-      background: var(--ink);
-      color: #fff;
-      font-size: clamp(20px, 4vw, 32px);
-      padding: 8px 18px;
-      margin-bottom: 22px;
-      box-shadow: var(--shadow-sm);
-      transform: rotate(-1deg);
+    .spine .vert {
+      writing-mode: vertical-rl; transform: rotate(180deg);
+      font-family: var(--mono); font-size: 11px; letter-spacing: .35em; text-transform: uppercase; color: var(--ink-40);
+      white-space: nowrap;
     }
+    .spine nav { display: flex; flex-direction: column; gap: 14px; }
+    .spine nav a { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink-40); display: block; }
+    .spine nav a:hover, .spine nav a.on { background: var(--ultra); border-color: var(--ultra); }
 
-    /* ---------- top bar / greeting ---------- */
-    #greeting {
-      border: var(--border);
-      background: var(--yellow);
-      box-shadow: var(--shadow-sm);
-      padding: 10px 16px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
-      font-size: 13px;
+    main { padding: 44px 0 80px; min-width: 0; }
+    section { margin-bottom: 88px; }
+
+    /* ---------- section headers: mono eyebrow + rule ---------- */
+    .eyebrow {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 30px;
+      font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ultra);
     }
-    #clock { font-family: "Space Mono", monospace; }
+    .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
-    /* ---------- header / hero ---------- */
-    header.block { background: var(--yellow); }
-    .hero { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; }
-    .avatar {
-      border: var(--border-fat); background: #fff; padding: 6px;
-      box-shadow: var(--shadow-sm); width: 100%;
+    /* ---------- hero ---------- */
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 44px; align-items: start; margin-bottom: 88px; padding-top: 12px; }
+    .hello { font-family: var(--mono); font-size: 13px; color: var(--saffron); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    h1.name {
+      font-family: var(--display); font-weight: 900; font-size: clamp(40px, 6.2vw, 72px);
+      line-height: 1.02; letter-spacing: -.01em; margin: 14px 0 20px;
     }
-    .avatar img { display: block; width: 100%; height: auto; filter: grayscale(100%) contrast(1.1); }
-    .name { font-size: clamp(42px, 9vw, 84px); line-height: .9; letter-spacing: -3px; }
-    .role { margin-top: 14px; font-weight: 700; font-size: clamp(13px, 2vw, 17px); border-top: var(--border); padding-top: 12px; text-transform: uppercase; }
-    .hero-btns { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; }
-
+    h1 .amp { color: var(--ultra); }
+    .thesis { font-size: 19px; max-width: 34em; color: var(--ink-60); }
+    .thesis b { color: var(--ink); font-weight: 700; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .btn {
-      display: inline-block; border: var(--border); background: #fff; color: var(--ink);
-      font-family: "Space Grotesk", sans-serif; font-weight: 700; text-transform: uppercase;
-      padding: 12px 20px; text-decoration: none; box-shadow: var(--shadow-sm);
-      cursor: pointer; font-size: 14px; transition: transform .08s ease, box-shadow .08s ease;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: .04em;
+      padding: 13px 22px; border-radius: 999px; border: 2px solid var(--ink);
+      color: var(--ink); background: transparent; cursor: pointer; transition: transform .12s ease, background .12s ease;
     }
-    .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
-    .btn-pink { background: var(--pink); color: #fff; }
-    .btn-blue { background: var(--blue); color: #fff; }
-    .btn-green { background: var(--green); color: #fff; }
+    .btn:hover { text-decoration: none; transform: translateY(-2px); }
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn.primary:hover { background: var(--ultra); border-color: var(--ultra); }
+    .socials { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 26px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+    .socials a { color: var(--ink-60); }
+    .socials a:hover { color: var(--ultra); }
 
-    /* ---------- socials ---------- */
-    .socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-    .social {
-      border: var(--border); background: var(--ink); color: var(--yellow);
-      padding: 8px 12px; font-weight: 700; text-decoration: none; font-size: 12px;
-      text-transform: uppercase; box-shadow: 3px 3px 0 rgba(0,0,0,.25);
-      transition: transform .08s ease;
+    /* ---------- the console (signature) ---------- */
+    .console {
+      background: var(--console); color: var(--console-ink); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden; font-family: var(--mono); font-size: 13px;
+      border: 1px solid #1C2350;
     }
-    .social:hover { transform: translate(-2px,-2px); background: var(--pink); color: #fff; }
-
-    /* ---------- about ---------- */
-    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 26px; }
-    .about-grid p { font-size: 14px; }
-    .facts { border: var(--border); box-shadow: var(--shadow-sm); }
-    .fact { display: grid; grid-template-columns: 90px 1fr; border-bottom: var(--border); }
-    .fact:last-child { border-bottom: none; }
-    .fact .k { background: var(--ink); color: #fff; padding: 10px; font-weight: 700; text-transform: uppercase; font-size: 12px; }
-    .fact .v { padding: 10px; font-size: 13px; word-break: break-word; }
-
-    /* ---------- experience counter ---------- */
-    .xp-banner {
-      border: var(--border-fat); background: var(--pink); color: #fff;
-      box-shadow: var(--shadow); padding: 18px; margin-bottom: 22px; text-align: center;
+    .console-bar {
+      display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+      border-bottom: 1px solid #1C2350; color: #6F7BC4; font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
     }
-    .xp-banner .label { text-transform: uppercase; font-weight: 700; font-size: 14px; letter-spacing: 1px; }
-    .xp-clock { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: clamp(20px, 5vw, 40px); margin-top: 8px; letter-spacing: -1px; }
-    .xp-clock b { background: var(--ink); padding: 2px 10px; display: inline-block; margin: 4px 2px; }
+    .console-bar .dot { width: 9px; height: 9px; border-radius: 50%; background: #2A3370; }
+    .console-bar .dot:nth-child(1) { background: var(--saffron); }
+    .console-bar .dot:nth-child(2) { background: var(--teal); }
+    .console-bar .dot:nth-child(3) { background: var(--ultra); }
+    .console-bar span { margin-left: auto; }
+    .console-log { padding: 18px 18px 8px; min-height: 300px; }
+    .console-log .ln { margin-bottom: 10px; display: block; }
+    .console-log .t { color: #6F7BC4; }
+    .console-log .ok { color: var(--teal); font-weight: 600; }
+    .console-log .hi { color: var(--saffron); }
+    .console-log .me { color: #FFFFFF; font-weight: 600; }
+    .console-foot { padding: 10px 18px 16px; color: #6F7BC4; font-size: 11px; border-top: 1px dashed #1C2350; }
+    .caret { display: inline-block; width: 8px; height: 15px; background: var(--console-ink); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+
+    /* ---------- experience counter strip ---------- */
+    .xp-strip {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 26px;
+      border-block: 1px solid var(--line); padding: 20px 4px; margin-bottom: 88px;
+      font-family: var(--mono);
+    }
+    .xp-strip .k { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-40); }
+    .xp-strip .v { font-size: 15px; font-weight: 600; }
+    .xp-strip .v b { color: var(--ultra); font-family: var(--display); font-weight: 700; font-size: 19px; }
+
+    /* ---------- AI ledger ---------- */
+    .ledger-intro { max-width: 46em; font-size: 18px; color: var(--ink-60); margin-bottom: 40px; }
+    .ledger-intro b { color: var(--ink); }
+    .ledger { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .entry {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 26px 26px 20px; box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column;
+    }
+    .entry.wide { grid-column: span 2; }
+    .entry h3 { font-size: 20px; font-weight: 900; letter-spacing: -.01em; margin-bottom: 4px; padding-right: 112px; }
+    .entry .sys { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--saffron); font-weight: 600; margin-bottom: 12px; }
+    .entry p { font-size: 15px; color: var(--ink-60); }
+    .entry p b, .entry li b { color: var(--ink); }
+    .entry ul { margin: 10px 0 0 18px; font-size: 15px; color: var(--ink-60); }
+    .entry li { margin-bottom: 7px; }
+    .proof {
+      margin-top: auto; padding-top: 16px; font-family: var(--mono); font-size: 12px; color: var(--teal); font-weight: 600;
+    }
+    .proof::before { content: "▸ proof: "; color: var(--ink-40); font-weight: 400; }
+    .stamp {
+      position: absolute; top: 20px; right: 20px;
+      font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      color: var(--teal); border: 1.5px solid var(--teal); border-radius: 4px; padding: 3px 8px; transform: rotate(3deg);
+    }
 
     /* ---------- skills ---------- */
-    .skill { margin-bottom: 16px; }
-    .skill-head { display: flex; justify-content: space-between; font-weight: 700; text-transform: uppercase; font-size: 14px; margin-bottom: 6px; }
-    .bar { border: var(--border); height: 26px; background: #fff; }
-    .bar > i { display: block; height: 100%; background: var(--blue); border-right: var(--border); }
-    .skill:nth-child(odd) .bar > i { background: var(--pink); }
-    .skill:nth-child(3n) .bar > i { background: var(--green); }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .skill-col { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .skill-col h3 { font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+    .skill-col.tier-1 h3 { color: var(--ultra); }
+    .skill-col.tier-2 h3 { color: var(--saffron); }
+    .skill-col.tier-3 h3 { color: var(--teal); }
+    .skill-col .sub { font-size: 13px; color: var(--ink-40); margin-bottom: 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips span {
+      font-family: var(--mono); font-size: 12.5px; font-weight: 500;
+      border: 1px solid var(--line); background: var(--paper); border-radius: 8px; padding: 6px 11px;
+    }
+    .skill-col.tier-1 .chips span { border-color: rgba(59, 69, 224, .35); }
 
-    /* ---------- timeline (clickable accordion) ---------- */
-    .timeline { display: flex; flex-direction: column; gap: 18px; }
-    .tl-card { border: var(--border); background: #fff; box-shadow: var(--shadow-sm); }
-    .tl-card.edu { border-left: 10px solid var(--green); }
-    .tl-card.job { border-left: 10px solid var(--blue); }
-    .tl-card.win { border-left: 10px solid var(--orange); }
-    .tl-card.founder { border-left: 10px solid var(--pink); }
-    .badge-now { background: var(--green); color: #fff; padding: 2px 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-left: 6px; }
+    /* ---------- timeline ---------- */
+    .timeline { border-left: 2px solid var(--line); margin-left: 8px; padding-left: 34px; display: flex; flex-direction: column; gap: 44px; }
+    .job { position: relative; }
+    .job::before {
+      content: ""; position: absolute; left: -41px; top: 8px; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--paper); border: 3px solid var(--ultra);
+    }
+    .job.past::before { border-color: var(--ink-40); }
+    .job .when { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-40); font-weight: 500; }
+    .job .when .now { color: var(--teal); font-weight: 600; }
+    .job h3 { font-size: 21px; font-weight: 900; margin: 6px 0 2px; letter-spacing: -.01em; }
+    .job .org { font-size: 15px; color: var(--ultra); font-weight: 700; margin-bottom: 12px; }
+    .job p { font-size: 15px; color: var(--ink-60); max-width: 52em; }
+    .job ul { margin: 10px 0 0 18px; font-size: 15px; color: var(--ink-60); max-width: 52em; }
+    .job li { margin-bottom: 7px; }
+    .job li b, .job p b { color: var(--ink); }
 
-    /* ---------- works / fun projects ---------- */
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    /* ---------- projects ---------- */
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .proj {
-      display: flex; flex-direction: column; border: var(--border); background: #fff;
-      box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink);
-      transition: transform .1s ease, box-shadow .1s ease; overflow: hidden;
+      display: block; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 26px; box-shadow: var(--shadow); color: var(--ink); transition: transform .14s ease, border-color .14s ease;
     }
-    .proj:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--ink); }
-    .proj-top { padding: 10px 16px; border-bottom: var(--border); font-weight: 700; text-transform: uppercase; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
-    .proj.p1 .proj-top { background: var(--pink); color: #fff; }
-    .proj.p2 .proj-top { background: var(--blue); color: #fff; }
-    .proj.p3 .proj-top { background: var(--orange); color: #fff; }
-    .proj.p4 .proj-top { background: var(--green); color: #fff; }
-    .proj-body { padding: 18px 16px; flex: 1; }
-    .proj-body h3 { font-size: 22px; letter-spacing: -1px; }
-    .proj-body .url { font-size: 12px; font-weight: 700; color: #555; margin: 4px 0 10px; word-break: break-all; }
-    .proj-body p { font-size: 13px; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .proj-tags span { border: 2px solid var(--ink); padding: 3px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; background: var(--yellow); }
-    .proj-foot { padding: 12px 16px; border-top: var(--border); font-weight: 700; text-transform: uppercase; font-size: 13px; display: flex; justify-content: space-between; align-items: center; background: var(--paper); }
-    @media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }
+    .proj:hover { text-decoration: none; transform: translateY(-4px); border-color: var(--ultra); }
+    .proj .cat { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--saffron); font-weight: 600; }
+    .proj h3 { font-size: 22px; font-weight: 900; margin: 8px 0 2px; }
+    .proj .url { font-family: var(--mono); font-size: 12px; color: var(--ink-40); margin-bottom: 12px; }
+    .proj p { font-size: 14.5px; color: var(--ink-60); }
 
-    .tl-head {
-      width: 100%; text-align: left; background: #fff; border: none; cursor: pointer;
-      padding: 16px 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
-      font-family: "Space Mono", monospace;
-    }
-    .tl-head:hover { background: var(--yellow); }
-    .tl-head .ttl { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; }
-    .tl-head .org { font-weight: 700; color: #444; }
-    .tl-head .date { font-size: 12px; font-weight: 700; text-transform: uppercase; background: var(--ink); color: var(--yellow); padding: 4px 8px; white-space: nowrap; }
-    .tl-toggle { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 22px; line-height: 1; }
-
-    .tl-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; border-top: 0 solid var(--ink); padding: 0 18px; font-size: 14px; }
-    .tl-card.open .tl-body { max-height: 1600px; border-top: var(--border); padding: 16px 18px; }
-    .tl-card.open .tl-toggle { transform: rotate(45deg); }
-    .tl-body ul { margin-left: 18px; }
-    .tl-body li { margin-bottom: 5px; }
-    .hint { font-size: 11px; text-transform: uppercase; color: #777; font-weight: 700; margin-bottom: 14px; }
+    /* ---------- credentials row ---------- */
+    .creds { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 22px; }
+    .cred { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .cred h3 { font-size: 17px; font-weight: 900; margin-bottom: 6px; }
+    .cred .k { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 10px; font-weight: 500; }
+    .cred p { font-size: 14px; color: var(--ink-60); }
+    .cred ul { margin: 6px 0 0 18px; font-size: 14px; color: var(--ink-60); }
+    .cred li { margin-bottom: 6px; }
 
     /* ---------- contact ---------- */
-    .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 26px; }
-    input, textarea {
-      width: 100%; border: var(--border); padding: 12px; font-family: "Space Mono", monospace;
-      background: var(--paper); margin-bottom: 12px; font-size: 14px;
+    .contact { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+    .contact form input, .contact form textarea {
+      width: 100%; font-family: var(--body); font-size: 15px; color: var(--ink);
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; margin-bottom: 12px;
     }
-    input:focus, textarea:focus { outline: none; background: #fff; box-shadow: var(--shadow-sm); }
+    .contact form input:focus, .contact form textarea:focus { outline: none; border-color: var(--ultra); box-shadow: 0 0 0 3px rgba(59,69,224,.14); }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card-facts { font-size: 15px; }
+    .card-facts .row { display: grid; grid-template-columns: 88px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+    .card-facts .row .k { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-40); padding-top: 3px; }
 
-    footer { text-align: center; }
-    .foot-card { border: var(--border-fat); background: var(--ink); color: var(--yellow); box-shadow: var(--shadow); padding: 22px; }
-    .foot-card .name-sm { font-family: "Space Grotesk", sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; }
-
-    .cert-block { text-align: center; }
-    .cert-block .btn { margin-top: 10px; }
+    footer {
+      border-top: 1px solid var(--line); padding: 34px 0 12px; display: flex; flex-wrap: wrap; gap: 14px 30px;
+      align-items: center; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--ink-40);
+    }
 
     /* ---------- responsive ---------- */
-    @media (max-width: 760px) {
+    @media (max-width: 960px) {
+      .page { grid-template-columns: 1fr; gap: 0; }
+      .spine { display: none; }
       .hero { grid-template-columns: 1fr; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .field-row { grid-template-columns: 1fr; }
+      .ledger, .skills, .projects, .creds { grid-template-columns: 1fr; }
+      .entry.wide { grid-column: span 1; }
+      .contact { grid-template-columns: 1fr; }
+      section { margin-bottom: 64px; }
+    }
+
+    /* ---------- print / PDF: same story, linearized & compact ---------- */
+    @media print {
+      @page { margin: 9mm 9mm 11mm; }
+      :root { --shadow: none; --radius: 8px; }
+      body { font-size: 10.5px; line-height: 1.45; }
+      .page { grid-template-columns: 1fr; max-width: none; padding: 0; display: block; }
+      .spine, .hero-cta, .contact form, .caret, .console-foot { display: none !important; }
+      main { padding: 0; }
+      section { margin-bottom: 18px; }
+      .hero { grid-template-columns: 1.1fr .9fr; gap: 18px; margin-bottom: 14px; }
+      h1.name { font-size: 30px; }
+      .thesis { font-size: 12px; }
+      .socials { margin-top: 10px; font-size: 10px; }
+      .console { font-size: 9px; border-radius: 8px; }
+      .console-log { min-height: 0; padding: 10px 12px 6px; }
+      .console-log .ln { margin-bottom: 4px; }
+      .xp-strip { margin-bottom: 18px; padding: 8px 0; }
+      .xp-strip .v b { font-size: 13px; }
+      .eyebrow { margin-bottom: 12px; }
+      .ledger, .skills, .projects, .creds { gap: 10px; }
+      .entry, .proj, .skill-col, .cred { box-shadow: none; break-inside: avoid; padding: 12px 14px; }
+      .entry h3 { font-size: 13px; padding-right: 80px; }
+      .entry p, .entry ul { font-size: 10.5px; }
+      .entry ul { margin-top: 4px; }
+      .entry li { margin-bottom: 2px; }
+      .proof { padding-top: 6px; font-size: 9px; }
+      .stamp { font-size: 8px; top: 10px; right: 10px; }
+      .sys { margin-bottom: 4px !important; font-size: 9px !important; }
+      .ledger-intro { font-size: 11.5px; margin-bottom: 14px; }
+      .timeline { gap: 14px; padding-left: 20px; }
+      .job::before { left: -27px; width: 8px; height: 8px; }
+      .job h3 { font-size: 13px; margin: 2px 0 0; }
+      .job .org { font-size: 11px; margin-bottom: 4px; }
+      .job p, .job ul { font-size: 10.5px; }
+      .job li { margin-bottom: 2px; }
+      .proj h3 { font-size: 13px; margin: 2px 0 0; }
+      .proj p { font-size: 10.5px; }
+      .proj .url { margin-bottom: 4px; }
+      .cred h3 { font-size: 12px; }
+      .cred p, .cred ul { font-size: 10.5px; }
+      .chips span { font-size: 9px; padding: 3px 6px; }
+      .skill-col .sub { margin-bottom: 8px; }
+      .contact { grid-template-columns: 1fr; }
+      .card-facts .row { padding: 5px 0; }
+      footer { padding: 12px 0 0; }
+      a { color: var(--ink); }
+      .proj:hover { transform: none; }
     }
   </style>
 </head>
 
 <body id="top">
-<div class="wrap">
+<div class="page">
 
-  <!-- GREETING / CLOCK BAR -->
-  <div id="greeting">
-    <span id="greet-text">HELLO.</span>
-    <span id="clock">--:--:--</span>
-  </div>
+  <aside class="spine" aria-hidden="true">
+    <span class="vert">Anurag Sen — Bhopal, India</span>
+    <nav>
+      <a href="#top" title="Top"></a>
+      <a href="#ai" title="AI ledger"></a>
+      <a href="#skills" title="Skills"></a>
+      <a href="#experience" title="Experience"></a>
+      <a href="#works" title="Works"></a>
+      <a href="#contact" title="Contact"></a>
+    </nav>
+    <span class="vert" id="spine-clock">--:--</span>
+  </aside>
 
-  <!-- HERO -->
-  <header class="block">
-    <div class="hero">
-      <div class="avatar">
-        <a href="https://www.linkedin.com/in/anurag-sen/" target="_blank" rel="noopener">
-          <img src="images/Profile.jpg" alt="Anurag Sen" width="200" height="200">
-        </a>
-      </div>
+  <main>
+
+    <!-- HERO -->
+    <header class="hero">
       <div>
-        <h1 class="name">ANURAG<br>SEN</h1>
-        <p class="role">Workstream Lead @ NOV · Founder · Game Dev · AR / VR / MR · Digital Twin</p>
-        <div class="hero-btns">
-          <a class="btn btn-blue" href="AnuragSen_CV.pdf" download="AnuragSen_CV.pdf">↓ Download CV</a>
-          <a class="btn btn-green" href="#contact">★ Hire Me</a>
+        <p class="hello" id="greet">Hello.</p>
+        <h1 class="name">I'm Anurag.<br>I ship with<br>an <span class="amp">AI&nbsp;fleet</span>.</h1>
+        <p class="thesis">
+          Workstream Lead at <b>NOV</b> by day, founder of <b>HatoHelp</b> &amp; <b>MotoSure</b> always.
+          Eleven years across Unity, digital twins, and cloud taught me how software gets built.
+          The last two taught me something better: how to make <b>AI agents build it with me</b> —
+          hunting bugs, talking to users, and shipping features while I sleep.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="_AnuragSenResume.pdf" download="_AnuragSenResume.pdf">↓ Resume (PDF)</a>
+          <a class="btn" href="#contact">Talk to me</a>
         </div>
         <div class="socials">
-          <a class="social" href="https://twitter.com/AnuragTechHack" target="_blank" rel="noopener">Twitter</a>
-          <a class="social" href="https://www.facebook.com/Anurag.hacker" target="_blank" rel="noopener">Facebook</a>
-          <a class="social" href="https://www.instagram.com/anu_rag_sen" target="_blank" rel="noopener">Instagram</a>
-          <a class="social" href="https://github.com/AnuragCsharp" target="_blank" rel="noopener">GitHub</a>
-          <a class="social" href="https://www.linkedin.com/in/anurag-sen/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/AnuragCsharp" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/anurag-sen/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/AnuragTechHack" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://www.instagram.com/anu_rag_sen" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
+
+      <!-- SIGNATURE: live agent console replaying real operations -->
+      <div class="console" role="img" aria-label="A console replaying real operations from Anurag's AI systems">
+        <div class="console-bar">
+          <i class="dot"></i><i class="dot"></i><i class="dot"></i>
+          <span>anurag@fleet — ops replay</span>
+        </div>
+        <div class="console-log" id="console-log"></div>
+        <div class="console-foot">every line above is a real event from systems I run in production</div>
+      </div>
+    </header>
+
+    <!-- LIVE XP STRIP -->
+    <div class="xp-strip">
+      <span class="k">Experience</span><span class="v" id="xp-clock">…</span>
+      <span class="k">Repos governed</span><span class="v"><b>70</b>+</span>
+      <span class="k">Products founded</span><span class="v"><b>2</b> live</span>
+      <span class="k">Base</span><span class="v">Madhya Pradesh, IN</span>
     </div>
-  </header>
 
-  <!-- LIVE EXPERIENCE COUNTER -->
-  <div class="xp-banner">
-    <div class="label">⏱ Total Work Experience — counting up live since 11 Aug 2014</div>
-    <div class="xp-clock" id="xp-clock">…</div>
-  </div>
+    <!-- AI OPERATIONS LEDGER -->
+    <section id="ai">
+      <div class="eyebrow">The AI operations ledger</div>
+      <p class="ledger-intro">
+        Everyone's resume says <i>"AI-enthusiast"</i> now. Mine has receipts. These are systems I designed,
+        built, and run in production — each one replaced a human grind with an agent I trust,
+        and each one has a paper trail. <b>My rule everywhere: AI proposes, I approve. Nothing merges without me.</b>
+      </p>
+      <div class="ledger">
 
-  <!-- ABOUT -->
-  <section class="block">
-    <h2 class="sec-title">// About Me</h2>
-    <div class="about-grid">
-      <p>As a highly skilled and experienced programmer, I am excited to bring my passion for computer graphics, 3D and interactive development to new opportunities. With a focus on methodology and structure, I am proficient in C# and have the ability to adapt to other languages as needed. In addition to my expertise in game development, I am also well-versed in pushing the limits of 3D for other applications such as interactive visualization, simulation, and robust AR, VR, and MR applications. I am eager to join a team where I can continue to develop my skills and collaborate to create the next generation of games and XR applications, pushing the boundaries of multimedia and 3D. On a personal level, I am a self-starter with a pragmatic approach and a strong sense of product ownership.</p>
-      <div class="facts">
-        <div class="fact"><div class="k">Age</div><div class="v" id="age">…</div></div>
-        <div class="fact"><div class="k">Email</div><div class="v"><a href="mailto:Anuragsen@hotmail.com">Anuragsen@hotmail.com</a></div></div>
-        <div class="fact"><div class="k">Phone</div><div class="v">+91-883917-8137</div></div>
-        <div class="fact"><div class="k">Address</div><div class="v">MQ 1133 Shobhapur Colony, Post Pathakhera, District Betul, Madhya Pradesh 500032 — INDIA</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="block">
-    <h2 class="sec-title">// Professional Skills</h2>
-    <div class="about-grid">
-      <div>
-        <div class="skill"><div class="skill-head"><span>C# Programming</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-        <div class="skill"><div class="skill-head"><span>Azure Certified (Az-900, Az-104)</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
-        <div class="skill"><div class="skill-head"><span>Unity 3D — Shaders & A.I</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
-      </div>
-      <div>
-        <div class="skill"><div class="skill-head"><span>Professional Trainer</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
-        <div class="skill"><div class="skill-head"><span>Project Management</span><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
-        <div class="skill"><div class="skill-head"><span>Full Stack Developer</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK EXPERIENCE -->
-  <section class="block" id="experience">
-    <h2 class="sec-title">// Work Experience</h2>
-    <p class="hint">▸ Click any card to expand the details</p>
-    <div class="timeline" id="job-timeline">
-
-      <div class="tl-card job open">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Workstream Lead — Software Engineering</span> <span class="org">— National Oilwell Varco (NOV)</span><span class="badge-now">Current</span><br><span class="date">Jul 2023 – Present</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <p>Lead the engineering workstream for the <b>Corporate Application Services (CAS)</b> domain — owning the design, development, and full lifecycle of the company's in-house enterprise applications, including internal mobile apps used across the organization.</p>
+        <article class="entry wide">
+          <span class="stamp">RUNNING DAILY</span>
+          <h3>I replaced bug-hunting with an AI agent that never sleeps</h3>
+          <p class="sys">Slack bug channel → triage → analysis → fix → tracker</p>
+          <p>
+            Our team used to lose evenings to bug triage. So I built an agent that watches our Slack bug channel.
+            When someone posts a bug, it reacts in about a second, reads the report, digs through the codebase,
+            works out the root cause, and drafts the fix on a branch — then files the whole investigation on a
+            GitHub Projects tracker so nothing gets lost and everything is auditable.
+          </p>
           <ul>
-            <li>Own and govern a portfolio of <b>70+ application repositories</b>, driving code standards, branching strategy, and release hygiene across multiple engineering teams.</li>
-            <li>Architected and deployed an in-house <b>Secret Manager</b> that securely stores, rotates, and serves the company's secrets and credentials across services.</li>
-            <li>Designed and built a suite of automated <b>cron jobs</b> handling scheduled data syncs, maintenance, and operational workflows — cutting manual effort and improving reliability.</li>
-            <li>Drive the design and delivery of internal mobile and web applications from concept through production.</li>
-            <li>Provide technical leadership, mentorship, and delivery ownership across the CAS engineering workstream.</li>
+            <li>It <b>hunts</b> — screenshots, stack traces, reporter chats: it pieces the story together itself.</li>
+            <li>It <b>analyses</b> — root cause written up like a good engineer's post-mortem, not a guess.</li>
+            <li>It <b>fixes</b> — branch, patch, and tests, but merging stays a human decision: mine.</li>
+            <li>It <b>keeps books</b> — every bug lands on the GitHub tracker with status, owner, and evidence.</li>
+          </ul>
+          <p class="proof">bug reports acknowledged in ~1 second; tracker maintained on GitHub Projects</p>
+        </article>
+
+        <article class="entry">
+          <span class="stamp">IN PRODUCT</span>
+          <h3>Genie — an AI concierge that talks to people</h3>
+          <p class="sys">Voice in → intent → action → voice out</p>
+          <p>
+            Inside HatoHelp I built <b>Genie</b>: you speak to the app — in Hindi or English — and it books your ride,
+            orders your food, finds you help. I engineered the full voice loop (speech recognition → LLM brain →
+            neural speech out) on AWS, and made it provider-swappable so the brain or the voice can be replaced without
+            touching the product. The hard part wasn't the AI — it was the safety: I designed a capability registry so
+            Genie can only do what it's explicitly allowed to do, and money-moving actions always come back to the human.
+          </p>
+          <p class="proof">live voice concierge; typed capability registry; zero unauthorized actions</p>
+        </article>
+
+        <article class="entry">
+          <span class="stamp">ZERO RELEASES</span>
+          <h3>A storefront that redecorates itself — no app updates</h3>
+          <p class="sys">Server-driven UI · remote layouts · live in minutes</p>
+          <p>
+            I designed our grocery storefront so festivals are a <b>content change, not a release</b>. Theme, hero,
+            banners, prices, even animations stream from a JSON manifest and remote layout templates; marketing edits
+            one file and every user's app transforms on the next open — Diwali to Christmas in minutes. If anything
+            server-side is ever broken, the app falls back to its stock look. It cannot crash by design.
+          </p>
+          <p class="proof">4 festival takeovers swapped live in one evening, zero binaries shipped</p>
+        </article>
+
+        <article class="entry">
+          <span class="stamp">FLEET</span>
+          <h3>I run AI agents like a team — with reviews</h3>
+          <p class="sys">Multi-agent development · adversarial review · ledgers</p>
+          <p>
+            I don't "prompt" — I <b>orchestrate</b>. Features get decomposed into tasks, each task goes to a fresh
+            implementer agent, every diff passes a reviewer agent, and disagreements escalate to me with evidence.
+            The process caught real production bugs the tests missed. It's code review culture, applied to machines —
+            and it means I ship a team's worth of output with a team of one.
+          </p>
+          <p class="proof">a full storefront feature: 11 commits, 53 new tests, reviewed &amp; merged in one day</p>
+        </article>
+
+        <article class="entry">
+          <span class="stamp">AUTOMATED</span>
+          <h3>The boring parts run themselves</h3>
+          <p class="sys">Device automation · CI/CD · campaigns · watchers</p>
+          <ul>
+            <li><b>Real-device test drives:</b> Appium scripts walk our apps like a user — book the ride, order the food, screenshot every step.</li>
+            <li><b>Release trains:</b> GitHub Actions → container registry → cloud deploy, by digest, no hands.</li>
+            <li><b>Push campaigns:</b> engagement notifications composed, sent, and verified end-to-end programmatically.</li>
+            <li><b>Always-on watchers:</b> schedulers that wake my agents when something needs eyes at 3 AM.</li>
+          </ul>
+          <p class="proof">smoke suites, deploys, and campaigns run without me in the loop</p>
+        </article>
+
+        <article class="entry wide">
+          <span class="stamp">PLATFORM</span>
+          <h3>Platforms designed for the AI era</h3>
+          <p class="sys">Architecture · guardrails · observability</p>
+          <p>
+            The two consumer platforms I founded are built so AI can safely operate them: typed capability
+            registries instead of open endpoints, server-authoritative pricing, idempotent dispatch, audit trails
+            on every automated action, and observability dashboards so I can watch my agents work. AI moves fast;
+            the platform is what keeps it honest.
+          </p>
+          <p class="proof">ops dashboard live; every agent action attributable and reversible</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="eyebrow">What I'm dangerous with</div>
+      <div class="skills">
+        <div class="skill-col tier-1">
+          <h3>Signature</h3>
+          <p class="sub">The work I'd bet my name on.</p>
+          <div class="chips">
+            <span>AI Agent Orchestration</span><span>LLM Apps (Claude · Bedrock)</span><span>Voice AI Pipelines (ASR·LLM·TTS)</span><span>Server-Driven UI</span><span>Prompt &amp; Tool Design</span><span>C# / .NET</span><span>Unity 3D &amp; Digital Twin</span>
+          </div>
+        </div>
+        <div class="skill-col tier-2">
+          <h3>Fluent</h3>
+          <p class="sub">Daily drivers, production-grade.</p>
+          <div class="chips">
+            <span>Flutter</span><span>Azure (AZ-900 · AZ-104)</span><span>AWS (EC2·RDS·Polly·Transcribe)</span><span>NestJS / Node</span><span>CI/CD (GitHub Actions · Azure DevOps)</span><span>AR / VR / MR</span><span>SQL &amp; Prisma</span>
+          </div>
+        </div>
+        <div class="skill-col tier-3">
+          <h3>Human skills</h3>
+          <p class="sub">The parts AI can't do for me.</p>
+          <div class="chips">
+            <span>Engineering Leadership</span><span>Product Ownership</span><span>Mentoring (ex-Professor)</span><span>Architecture Reviews</span><span>Budget &amp; Vendor Mgmt</span><span>Shipping Under Pressure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="eyebrow">Where I've worked</div>
+      <div class="timeline">
+
+        <div class="job">
+          <p class="when">Jul 2023 — <span class="now">Present</span></p>
+          <h3>Workstream Lead, Software Engineering</h3>
+          <p class="org">National Oilwell Varco (NOV)</p>
+          <p>I lead the engineering workstream for Corporate Application Services — the company's in-house enterprise and mobile applications, end to end.</p>
+          <ul>
+            <li>Own and govern a portfolio of <b>70+ application repositories</b>: code standards, branching strategy, release hygiene across multiple teams.</li>
+            <li>Architected an in-house <b>Secret Manager</b> that stores, rotates, and serves credentials across services.</li>
+            <li>Built a suite of automated jobs for scheduled syncs and operational workflows — less manual effort, more reliability.</li>
+            <li>Technical leadership, mentorship, and delivery ownership across the workstream.</li>
           </ul>
         </div>
-      </div>
 
-      <div class="tl-card founder">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Founder &amp; Lead Developer (Freelance)</span> <span class="org">— MotoSure.in &amp; HatoHelp.in · with Metavisionrs IT Solution Pvt. Ltd.</span><span class="badge-now">Current</span><br><span class="date">Feb 2025 – Present</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <p>A parallel passion project — building products for people in my free time, pro-bono (no salary), in collaboration with Metavisionrs IT Solution Pvt. Ltd. Founder and lead developer of two consumer mobile applications, owning the full product lifecycle: concept, UX, mobile development, backend, and deployment.</p>
+        <div class="job">
+          <p class="when">Feb 2025 — <span class="now">Present</span></p>
+          <h3>Founder &amp; Lead Developer</h3>
+          <p class="org">HatoHelp.in &amp; MotoSure.in · with Metavisionrs IT Solution Pvt. Ltd.</p>
+          <p>
+            My passion project, built pro-bono in my own time: two consumer platforms, solo-architected from
+            concept to app stores. This is where my AI fleet lives — everything in the ledger above runs here,
+            in production, for real users.
+          </p>
           <ul>
-            <li><b>MotoSure (motosure.in)</b> — a 24/7 roadside assistance platform for India offering on-demand <b>car &amp; bike breakdown support</b>, connecting stranded motorists with quick emergency help anywhere on Indian roads.</li>
-            <li><b>HatoHelp (hatohelp.in)</b> — <i>"Help All, Trust One"</i> — a community-driven, trust-based mobile platform that connects people who need help with those ready to provide it.</li>
-            <li>Solo-built from the ground up: product strategy, app architecture, and shipping — driven purely by the goal of building something genuinely useful for people.</li>
+            <li><b>HatoHelp</b> — <i>"Help All, Trust One"</i> — rides, food, grocery, parcels and community help in one trust-based app, with the Genie voice concierge inside.</li>
+            <li><b>MotoSure</b> — 24/7 roadside assistance across India: on-demand car &amp; bike breakdown support.</li>
+            <li>Full stack, one pair of hands + agents: Flutter apps, NestJS backend, AWS infra, CI/CD, observability, releases.</li>
           </ul>
         </div>
-      </div>
 
-      <div class="tl-card job">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Technical Lead</span> <span class="org">— Wipro Technologies</span><br><span class="date">Oct 2021 – Jun 2023</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <p>Working on Digital Twin platform creation using Unity 3D, Azure Services and team management.</p>
+        <div class="job past">
+          <p class="when">Oct 2021 — Jun 2023</p>
+          <h3>Technical Lead</h3>
+          <p class="org">Wipro Technologies</p>
+          <p>Digital Twin platform creation with Unity 3D and Azure, plus team leadership for an Energy &amp; Utilities client.</p>
           <ul>
-            <li>Developed and implemented Azure architecture for solutions as per client specifications.</li>
-            <li>Collaborated with architects and stakeholders to develop DTDL solutions for the Energy &amp; Utilities client.</li>
-            <li>Designed and implemented a comprehensive test plan and CI/CD setup for Unity and web application automation on Azure DevOps Pipelines.</li>
-            <li>Established multiple services in alignment with the development pipeline for seamless transition.</li>
-            <li>Acquired in-depth expertise in Azure Cloud, utilizing over 10 services.</li>
-            <li>Participated in the digitalization of P&amp;ID to Digital Twin transformation.</li>
+            <li>Designed Azure architectures and DTDL solutions with client architects and stakeholders.</li>
+            <li>Built the CI/CD story for Unity + web on Azure DevOps Pipelines, including automated test plans.</li>
+            <li>Hands-on with 10+ Azure services; drove the P&amp;ID → Digital Twin transformation work.</li>
           </ul>
         </div>
-      </div>
 
-      <div class="tl-card job">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">SDE II</span> <span class="org">— Jio Tesseract (Reliance Group)</span><br><span class="date">Aug 2021 – Sep 2021</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
+        <div class="job past">
+          <p class="when">May 2021 — Oct 2021</p>
+          <h3>Technical Lead (Consultant) · SDE II</h3>
+          <p class="org">Outreal XR, Dubai · Jio Tesseract (Reliance)</p>
           <ul>
-            <li>Creation of various backend pipelines in Unity 3D for the MR-Glasses.</li>
-            <li>Unity 3D SDK developer-relations engineer for smart glasses in-house development product.</li>
+            <li>At Outreal XR: secure AWS Workspace infrastructure, Unity performance leadership, budget &amp; vendor management.</li>
+            <li>At Jio Tesseract: Unity 3D backend pipelines and SDK developer-relations for in-house MR glasses.</li>
           </ul>
         </div>
-      </div>
 
-      <div class="tl-card job">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Technical Lead (Consultant)</span> <span class="org">— Outreal XR (Dubai)</span><br><span class="date">May 2021 – Oct 2021</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
+        <div class="job past">
+          <p class="when">2019 — 2021</p>
+          <h3>Senior Faculty, Gaming</h3>
+          <p class="org">iNurture Education · deputed professor at D.Y. Patil University, Pune</p>
+          <p>Taught and mentored undergraduates in game development — projects, placements, and the craft. Teaching engineers made me a better one.</p>
+        </div>
+
+        <div class="job past">
+          <p class="when">Aug 2014 — 2019</p>
+          <h3>Senior Software Engineer</h3>
+          <p class="org">Wipro Technologies</p>
           <ul>
-            <li>Implemented a secure remote infrastructure on AWS Workspace to ensure secure access and data management.</li>
-            <li>Adhered to agile methodologies by conducting daily scrums and tracking progress through Trello.</li>
-            <li>Leveraged technical expertise &amp; SME in Unity Game Engine to optimize performance and functionality.</li>
-            <li>Provided technical and developmental leadership to the team as needed.</li>
-            <li>Effectively managed the allocated budget to ensure smooth operations and project execution.</li>
-            <li>Managed resources, assets, and vendors to ensure alignment with project objectives and timelines.</li>
+            <li><b>Saudi Aramco deputation:</b> digital elevation maps with GDAL; height-map terrain of Saudi Arabia at 30 m/pixel; Unity HLSL shaders.</li>
+            <li><b>Oil &amp; Gas major (4 yrs):</b> Azure Cognitive Search with custom ML skillsets; IBM Watson voice control; 3D live visualization for oil exploration; vessel inspection &amp; voyage tracking for BP.</li>
+            <li><b>AR/VR (2 yrs):</b> automobile marketing app; training-simulator POCs for an aircraft manufacturer; EPSON Moverio BT-300 plugin work.</li>
           </ul>
         </div>
+
       </div>
+    </section>
 
-      <div class="tl-card job">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Senior Faculty — Gaming</span> <span class="org">— iNurture Education</span><br><span class="date">2019 – 2021</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <ul>
-            <li>Deputed as a professor at D.Y. Patil University, Pune.</li>
-            <li>Responsible for the education and development of undergraduate students in the field of gaming.</li>
-            <li>Nurtured and mentored students to ensure the skills necessary to excel in their field.</li>
-            <li>Managed the progress of student projects and conducted student development programs.</li>
-            <li>Coordinated with the university's placement and project office.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-card job">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Senior Software Engineer</span> <span class="org">— Wipro Technologies</span><br><span class="date">2014 – 2019</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <ul>
-            <li><b>Deputation at Saudi Aramco as Senior Simulation Engineer (7 months):</b>
-              <ul>
-                <li>Developed Digital Elevation Maps using GDAL (Geospatial Data Abstraction Library).</li>
-                <li>Generated large-scale Height-Map terrain of Saudi Arabia with an accuracy of 30 meters/pixel.</li>
-                <li>Implemented Unity HLSL shaders to colorize maps based on height.</li>
-              </ul>
-            </li>
-            <li><b>High-Level Design contribution to collaborative framework for Oil &amp; Gas major (4 years):</b>
-              <ul>
-                <li>Designed and developed an Azure Cognitive Search engine utilizing ML custom skillsets.</li>
-                <li>Worked on IBM Watson to enable voice control for an application.</li>
-                <li>Designed and developed 3D live visualization tools for the ENU Oil-exploration domain.</li>
-                <li>Created and supported a vessel inspection and voyage-tracking application for BP.</li>
-              </ul>
-            </li>
-            <li><b>Project contributions to other teams at Wipro (6 months):</b>
-              <ul>
-                <li>Designed and developed an application using a Unity plugin for EPSON Moverio BT-300.</li>
-                <li>Experience with casino slot games, including combination and validation testing.</li>
-              </ul>
-            </li>
-            <li><b>Design and development of AR &amp; VR applications (2 years):</b>
-              <ul>
-                <li>Developed a marketing application for automobiles (2 months).</li>
-                <li>Developed training-simulator POCs for an aircraft manufacturer (2 months).</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="block">
-    <h2 class="sec-title">// Education — 7 Yrs</h2>
-    <p class="hint">▸ Graduation + Masters · click to expand</p>
-    <div class="timeline">
-      <div class="tl-card edu">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">Masters in Software Engineering</span> <span class="org">— BITS Pilani University</span><br><span class="date">2015 – 2018</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body">
-          <p>Graduate of the Masters program at BITS Pilani, an internationally recognized university. Participated in the Work Integrated Learning Program (WILP), sponsored by my employer, Wipro. This program allowed me to integrate my work as a software engineer with my studies, achieving a high academic standing with a cumulative GPA of 7.0 upon completion.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORKS & FUN PROJECTS -->
-  <section class="block" id="works">
-    <h2 class="sec-title">// My Works &amp; Fun Projects</h2>
-    <p class="hint">▸ Click any card to open the live project ↗</p>
-    <div class="projects">
-
-      <a class="proj p1" href="https://motosure.in" target="_blank" rel="noopener">
-        <div class="proj-top"><span>★ Startup</span><span>↗</span></div>
-        <div class="proj-body">
-          <h3>MotoSure</h3>
-          <div class="url">motosure.in</div>
-          <p>A 24/7 roadside assistance platform for India — on-demand <b>car &amp; bike breakdown support</b> that connects stranded motorists with quick emergency help anywhere on Indian roads.</p>
-          <div class="proj-tags"><span>Mobile App</span><span>24/7 Support</span><span>India</span></div>
-        </div>
-        <div class="proj-foot"><span>Founder &amp; Developer</span><span>Visit →</span></div>
-      </a>
-
-      <a class="proj p2" href="https://hatohelp.in" target="_blank" rel="noopener">
-        <div class="proj-top"><span>★ Community</span><span>↗</span></div>
-        <div class="proj-body">
+    <!-- WORKS -->
+    <section id="works">
+      <div class="eyebrow">Things I've built for people</div>
+      <div class="projects">
+        <a class="proj" href="https://hatohelp.in" target="_blank" rel="noopener">
+          <p class="cat">Founder · Platform</p>
           <h3>HatoHelp</h3>
-          <div class="url">hatohelp.in</div>
-          <p><i>"Help All, Trust One."</i> A community-driven, trust-based mobile platform connecting people who need help with those ready to provide it.</p>
-          <div class="proj-tags"><span>Mobile App</span><span>Community</span><span>Trust</span></div>
-        </div>
-        <div class="proj-foot"><span>Founder &amp; Developer</span><span>Visit →</span></div>
-      </a>
-
-      <a class="proj p3" href="https://meetndance.com" target="_blank" rel="noopener">
-        <div class="proj-top"><span>★ Fun / Metaverse</span><span>↗</span></div>
-        <div class="proj-body">
+          <p class="url">hatohelp.in</p>
+          <p>"Help All, Trust One." Rides, food, grocery, parcels and community help in one trust-based app — with Genie, the voice concierge, and a self-updating festival storefront.</p>
+        </a>
+        <a class="proj" href="https://motosure.in" target="_blank" rel="noopener">
+          <p class="cat">Founder · Platform</p>
+          <h3>MotoSure</h3>
+          <p class="url">motosure.in</p>
+          <p>24/7 roadside assistance for India — on-demand car &amp; bike breakdown support connecting stranded motorists with quick help anywhere.</p>
+        </a>
+        <a class="proj" href="https://meetndance.com" target="_blank" rel="noopener">
+          <p class="cat">Fun · Metaverse</p>
           <h3>MeetnDance</h3>
-          <div class="url">meetndance.com</div>
-          <p>An online <b>low-poly rave party</b> — a gamified 3D metaverse where people join a neon dance floor, customize avatars, dance &amp; emote, and vibe to music together in real time with voice &amp; text chat. "A tiny indie rave built with love."</p>
-          <div class="proj-tags"><span>WebGL / 3D</span><span>Multiplayer</span><span>Low-Poly</span><span>Music</span></div>
-        </div>
-        <div class="proj-foot"><span>Creator &amp; Developer</span><span>Visit →</span></div>
-      </a>
-
-      <a class="proj p4" href="https://hatoeat.in" target="_blank" rel="noopener">
-        <div class="proj-top"><span>★ Cafe / Web</span><span>↗</span></div>
-        <div class="proj-body">
+          <p class="url">meetndance.com</p>
+          <p>A low-poly online rave — a 3D multiplayer dance floor with avatars, emotes, music, and voice chat. A tiny indie metaverse built with love.</p>
+        </a>
+        <a class="proj" href="https://hatoeat.in" target="_blank" rel="noopener">
+          <p class="cat">Design · Web</p>
           <h3>HatoEat — Cafe Hato</h3>
-          <div class="url">hatoeat.in · menu.hatoeat.in</div>
-          <p>A cafe brand — <i>"Healthy And Tasty Orders."</i> I designed and built the entire website end-to-end, including the digital menu and its full visual design at <b>menu.hatoeat.in</b>.</p>
-          <div class="proj-tags"><span>Web Design</span><span>Menu Design</span><span>Branding</span></div>
+          <p class="url">hatoeat.in · menu.hatoeat.in</p>
+          <p>"Healthy And Tasty Orders." A cafe brand where I designed and built the whole web presence, digital menu included.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="creds">
+      <div class="eyebrow">Credentials &amp; wins</div>
+      <div class="creds">
+        <div class="cred">
+          <p class="k">Education</p>
+          <h3>M.Tech, Software Engineering</h3>
+          <p><b>BITS Pilani</b> · 2015–2018 · Work-Integrated Learning Program, sponsored by Wipro — engineering by day, engineering theory by night.</p>
         </div>
-        <div class="proj-foot"><span>Designer &amp; Developer</span><span>Visit →</span></div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section class="block">
-    <h2 class="sec-title">// Achievements</h2>
-    <p class="hint">▸ Click to expand</p>
-    <div class="timeline">
-      <div class="tl-card win">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">League Exemplar Award</span> <span class="org">— Wipro (Industrial Engineering Services)</span><br><span class="date">2018</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body"><p>Honored with the "League Exemplar" award from the Industrial Engineering Services division at Wipro.</p></div>
-      </div>
-      <div class="tl-card win">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">1st Place — AR Game Dev Hackathon</span> <span class="org">— India</span><br><span class="date">2018</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body"><p>Secured first place in the Augmented Reality Game Development HACKATHON 2018, held in India.</p></div>
-      </div>
-      <div class="tl-card win">
-        <button class="tl-head" type="button">
-          <span><span class="ttl">League Extraordinary Award</span> <span class="org">— Wipro (Platform &amp; Engineering Services)</span><br><span class="date">2017</span></span>
-          <span class="tl-toggle">+</span>
-        </button>
-        <div class="tl-body"><p>In Q3 2017, received the "League Extraordinary" award from the Platform &amp; Engineering Services division at Wipro.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section class="block cert-block">
-    <h2 class="sec-title">// Certifications</h2>
-    <p>Completed many certifications — full collection linked below.</p>
-    <a class="btn btn-pink" href="https://drive.google.com/drive/folders/0B4oOiLRjWNxDTUZrcDExeHQ1UzQ?resourcekey=0-X-3QFN-9ptiYZ6xIr7jfrg" target="_blank" rel="noopener">Open Certificate Folder ↗</a>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="block" id="contact">
-    <h2 class="sec-title">// Contact</h2>
-    <div class="contact-grid">
-      <form action="https://formspree.io/f/xyyakevl" method="POST">
-        <div class="field-row">
-          <input type="text" name="name" placeholder="YOUR NAME" required>
-          <input type="email" name="_replyto" placeholder="YOUR E-MAIL" required>
+        <div class="cred">
+          <p class="k">Awards</p>
+          <h3>Three that mattered</h3>
+          <ul>
+            <li><b>1st place</b> — AR Game Dev Hackathon, India (2018)</li>
+            <li>League Exemplar — Wipro IES (2018)</li>
+            <li>League Extraordinary — Wipro P&amp;ES (2017)</li>
+          </ul>
         </div>
-        <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required></textarea>
-        <button class="btn btn-blue" type="submit">Send Message →</button>
-      </form>
-      <div class="facts">
-        <div class="fact"><div class="k">Address</div><div class="v">MQ 1133 Shobhapur Colony, Post Pathakhera, District Betul, Madhya Pradesh 500032 — INDIA</div></div>
-        <div class="fact"><div class="k">Phone</div><div class="v">+91-883917-8137</div></div>
-        <div class="fact"><div class="k">Email</div><div class="v"><a href="mailto:anuragsen@hotmail.com">anuragsen@hotmail.com</a></div></div>
+        <div class="cred">
+          <p class="k">Certifications</p>
+          <h3>Azure certified, and then some</h3>
+          <p>AZ-900 · AZ-104 · plus a folder full of the rest.</p>
+          <p style="margin-top:10px;"><a href="https://drive.google.com/drive/folders/0B4oOiLRjWNxDTUZrcDExeHQ1UzQ?resourcekey=0-X-3QFN-9ptiYZ6xIr7jfrg" target="_blank" rel="noopener">Open certificate folder ↗</a></p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="foot-card">
-      <div class="name-sm">Anurag Sen</div>
-      <div class="socials" style="justify-content:center;">
-        <a class="social" href="https://twitter.com/AnuragTechHack" target="_blank" rel="noopener">Twitter</a>
-        <a class="social" href="https://www.facebook.com/Anurag.hacker" target="_blank" rel="noopener">Facebook</a>
-        <a class="social" href="https://www.instagram.com/anu_rag_sen" target="_blank" rel="noopener">Instagram</a>
-        <a class="social" href="https://github.com/AnuragCsharp" target="_blank" rel="noopener">GitHub</a>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="eyebrow">Say hello</div>
+      <div class="contact">
+        <form action="https://formspree.io/f/xyyakevl" method="POST">
+          <div class="field-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="_replyto" placeholder="Your email" required>
+          </div>
+          <textarea name="message" rows="5" placeholder="What are we building?" required></textarea>
+          <button class="btn primary" type="submit">Send message →</button>
+        </form>
+        <div class="card-facts">
+          <div class="row"><span class="k">Email</span><span><a href="mailto:anuragsen@hotmail.com">anuragsen@hotmail.com</a></span></div>
+          <div class="row"><span class="k">Phone</span><span>+91-88391-78137</span></div>
+          <div class="row"><span class="k">Age</span><span id="age">…</span></div>
+          <div class="row"><span class="k">Address</span><span>MQ 1133 Shobhapur Colony, Post Pathakhera, District Betul, Madhya Pradesh 500032 — India</span></div>
+        </div>
       </div>
-      <p style="margin-top:16px;font-size:12px;text-transform:uppercase;">© <span id="year"></span> Anurag Sen — Built Raw, Built Brutal.</p>
-    </div>
-  </footer>
+    </section>
 
+    <footer>
+      <span>© <span id="year"></span> Anurag Sen</span>
+      <span>Designed by me, built with my fleet — reviewed by a human.</span>
+    </footer>
+
+  </main>
 </div>
 
 <script>
-  /* ---------- greeting + live clock ---------- */
+  /* ---------- greeting + spine clock ---------- */
   (function () {
     var h = new Date().getHours();
-    var g = h < 12 ? "GOOD MORNING ☀" : h < 18 ? "GOOD AFTERNOON 🌤" : "GOOD EVENING 🌙";
-    document.getElementById("greet-text").textContent = g;
+    document.getElementById("greet").textContent =
+      h < 12 ? "Good morning." : h < 18 ? "Good afternoon." : "Good evening.";
+    var el = document.getElementById("spine-clock");
     function tick() {
-      document.getElementById("clock").textContent = new Date().toLocaleTimeString();
+      if (el) el.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     }
-    tick(); setInterval(tick, 1000);
+    tick(); setInterval(tick, 30000);
   })();
 
-  /* ---------- age (live) ---------- */
+  /* ---------- live age ---------- */
   (function () {
-    var b = new Date("January 18, 1994");
-    var t = new Date();
+    var b = new Date("January 18, 1994"), t = new Date();
     var y = t.getFullYear() - b.getFullYear();
     var m = t.getMonth() - b.getMonth();
     if (t.getDate() < b.getDate()) m--;
@@ -597,7 +666,7 @@
     document.getElementById("age").textContent = m === 0 ? (y + " years") : (y + " years, " + m + " months");
   })();
 
-  /* ---------- live experience counter (increases every second) ---------- */
+  /* ---------- live experience counter (since 11 Aug 2014) ---------- */
   (function () {
     var start = new Date("August 11, 2014 00:00:00");
     var el = document.getElementById("xp-clock");
@@ -607,34 +676,50 @@
       var years = now.getFullYear() - start.getFullYear();
       var months = now.getMonth() - start.getMonth();
       var days = now.getDate() - start.getDate();
-      var hh = now.getHours() - start.getHours();
-      var mm = now.getMinutes() - start.getMinutes();
-      var ss = now.getSeconds() - start.getSeconds();
-      if (ss < 0) { ss += 60; mm--; }
-      if (mm < 0) { mm += 60; hh--; }
-      if (hh < 0) { hh += 24; days--; }
-      if (days < 0) {
-        var prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-        days += prevMonth; months--;
-      }
+      var hh = now.getHours(), mm = now.getMinutes(), ss = now.getSeconds();
+      if (days < 0) { var pm = new Date(now.getFullYear(), now.getMonth(), 0).getDate(); days += pm; months--; }
       if (months < 0) { months += 12; years--; }
-      el.innerHTML =
-        "<b>" + years + "</b> yrs " +
-        "<b>" + months + "</b> mo " +
-        "<b>" + days + "</b> d " +
-        "<b>" + pad(hh) + ":" + pad(mm) + ":" + pad(ss) + "</b>";
+      el.innerHTML = "<b>" + years + "</b> yrs <b>" + months + "</b> mo <b>" + days + "</b> d — live " + pad(hh) + ":" + pad(mm) + ":" + pad(ss);
     }
     update(); setInterval(update, 1000);
   })();
 
-  /* ---------- clickable timeline accordions ---------- */
-  document.querySelectorAll(".tl-head").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      btn.closest(".tl-card").classList.toggle("open");
-    });
-  });
+  /* ---------- signature: ops replay console ---------- */
+  (function () {
+    var log = document.getElementById("console-log");
+    if (!log) return;
+    var lines = [
+      ['t', '06:12:04'], ['me', ' bug-agent '], ['plain', 'new report in #bug-reports — reacting 👀 (1.2s)'],
+      ['t', '06:12:58'], ['me', ' bug-agent '], ['plain', 'root cause: stale token on boot → fix drafted on branch'],
+      ['t', '06:13:02'], ['ok', ' ✓ tracker updated'], ['plain', ' — GitHub Projects · awaiting human approval'],
+      ['t', '11:47:20'], ['me', ' genie '], ['plain', '"मुझे राजवाड़ा जाना है" → ride quoted → confirmed by voice'],
+      ['t', '11:47:26'], ['ok', ' ✓ capability check passed'], ['plain', ' — payment stays with the human'],
+      ['t', '18:02:11'], ['me', ' storefront '], ['plain', 'manifest.json edited on GitHub → Diwali live, 0 releases'],
+      ['t', '18:06:40'], ['ok', ' ✓ 4th festival swap today'], ['plain', ' — app never restarted'],
+      ['t', '23:58:03'], ['me', ' fleet '], ['plain', 'feature branch: 11 commits · 53 tests · reviewed → merged'],
+      ['hi', '— all of this, while one human slept well.']
+    ];
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var i = 0;
+    var current = document.createElement('span'); current.className = 'ln'; log.appendChild(current);
+    var caret = document.createElement('span'); caret.className = 'caret'; current.appendChild(caret);
+    function append() {
+      if (i >= lines.length) { return; }
+      var pair = lines[i++];
+      var s = document.createElement('span');
+      s.className = pair[0] === 'plain' ? '' : pair[0];
+      s.textContent = pair[1];
+      current.insertBefore(s, caret);
+      var isTime = pair[0] === 't';
+      if (!isTime && (i >= lines.length || lines[i][0] === 't' || lines[i][0] === 'hi')) {
+        current = document.createElement('span'); current.className = 'ln';
+        log.appendChild(current); current.appendChild(caret);
+      }
+      setTimeout(append, reduced ? 0 : (isTime ? 120 : 420));
+    }
+    append();
+  })();
 
-  /* ---------- footer year ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
